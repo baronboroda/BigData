@@ -8,6 +8,7 @@ import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by user on 8/3/2017.
@@ -16,12 +17,12 @@ public abstract class Flower {
 
     private double length;
     private BigDecimal price;
-    private Date pickedDate;
+    private int pickedDaysBefore;
 
-    public Flower(double length, BigDecimal price, Date pickedDate) {
-        this. length = length;
+    public Flower(double length, BigDecimal price, int pickedDaysBefore) {
+        this.length = length;
         this.price = price;
-        this.pickedDate = pickedDate;
+        this.pickedDaysBefore = pickedDaysBefore;
     }
 
     public void setLength(int length) {
@@ -40,22 +41,26 @@ public abstract class Flower {
         return this.price;
     }
 
-    public void setDays(Date pickedDate) {
-        this.pickedDate = pickedDate;
+    public void setDays(int pickedDaysBefore) {
+        this.pickedDaysBefore = pickedDaysBefore;
     }
 
-    public Date getDays() {
-        return this.pickedDate;
+    public int getDays() {
+        return this.pickedDaysBefore;
     }
 
     public static void main(String[] args) {
 
-        ArrayList<Flower> bucket = new ArrayList();
+        Bucket b1 = new Bucket();
+        Lily lily1 = new Lily(30, BigDecimal.valueOf(15), 2);
+        Tulip tulip1 = new Tulip(20, BigDecimal.valueOf(30), 3);
+        Lavender lavender1 = new Lavender(40, BigDecimal.valueOf(10), 1);
+        b1.addFlower(lily1);
+        b1.addFlower(tulip1);
+        b1.addFlower(lavender1);
 
-        //LocalDateTime.now();
-
-        System.out.println( LocalDateTime.now());
-
+        System.out.println(b1.getLongestFlower());
+        System.out.println(b1.totalPrice());
     }
 
 }
@@ -64,16 +69,16 @@ public abstract class Flower {
 
     public final static String TYPE_NAME = "Spring";
 
-    public SpringFlower(double length, BigDecimal price, Date pickedDate) {
-        super(length, price, pickedDate);
+    public SpringFlower(double length, BigDecimal price, int pickedDaysBefore) {
+        super(length, price, pickedDaysBefore);
     }
 }
 abstract class WeddingFlower extends Flower {
 
     public final static String TYPE_NAME = "Wedding";
 
-    public WeddingFlower(double length, BigDecimal price, Date pickedDate) {
-        super(length, price, pickedDate);
+    public WeddingFlower(double length, BigDecimal price, int pickedDaysBefore) {
+        super(length, price, pickedDaysBefore);
     }
 }
 
@@ -81,8 +86,8 @@ abstract class TropicalFlower extends Flower {
 
     public final static String TYPE_NAME = "Tropical";
 
-    public TropicalFlower(double length, BigDecimal price, Date pickedDate) {
-        super(length, price, pickedDate);
+    public TropicalFlower(double length, BigDecimal price, int pickedDaysBefore) {
+        super(length, price, pickedDaysBefore);
     }
 }
 
@@ -90,8 +95,8 @@ class Peony extends SpringFlower {
 
     public final static String NAME = "Peony";
 
-    public Peony (double length, BigDecimal price, Date pickedDate) {
-        super(length, price, pickedDate);
+    public Peony (double length, BigDecimal price, int pickedDaysBefore) {
+        super(length, price, pickedDaysBefore);
     }
 }
 
@@ -99,8 +104,8 @@ class Tulip extends SpringFlower {
 
     public final static String NAME = "Tulip";
 
-    public Tulip (double length, BigDecimal price, Date pickedDate) {
-        super(length, price, pickedDate);
+    public Tulip (double length, BigDecimal price, int pickedDaysBefore) {
+        super(length, price, pickedDaysBefore);
     }
 }
 
@@ -108,8 +113,8 @@ class Waxflower extends SpringFlower {
 
     public final static String NAME = "Waxflower";
 
-    public Waxflower (double length, BigDecimal price, Date pickedDate) {
-        super(length, price, pickedDate);
+    public Waxflower (double length, BigDecimal price, int pickedDaysBefore) {
+        super(length, price, pickedDaysBefore);
     }
 }
 
@@ -117,8 +122,8 @@ class Iris extends WeddingFlower {
 
     public final static String NAME = "Iris";
 
-    public Iris (double length, BigDecimal price, Date pickedDate) {
-        super(length, price, pickedDate);
+    public Iris (double length, BigDecimal price, int pickedDaysBefore) {
+        super(length, price, pickedDaysBefore);
     }
 }
 
@@ -126,8 +131,8 @@ class Lavender extends WeddingFlower {
 
     public final static String NAME = "Lavender";
 
-    public Lavender (double length, BigDecimal price, Date pickedDate) {
-        super(length, price, pickedDate);
+    public Lavender (double length, BigDecimal price, int pickedDaysBefore) {
+        super(length, price, pickedDaysBefore);
     }
 }
 
@@ -135,8 +140,8 @@ class Lily extends WeddingFlower {
 
     public final static String NAME = "Lily";
 
-    public Lily (double length, BigDecimal price, Date pickedDate) {
-        super(length, price, pickedDate);
+    public Lily (double length, BigDecimal price, int pickedDaysBefore) {
+        super(length, price, pickedDaysBefore);
     }
 }
 
@@ -144,8 +149,8 @@ class Orchid extends TropicalFlower {
 
     public final static String NAME = "Orchid";
 
-    public Orchid (double length, BigDecimal price, Date pickedDate) {
-        super(length, price, pickedDate);
+    public Orchid (double length, BigDecimal price, int pickedDaysBefore) {
+        super(length, price, pickedDaysBefore);
     }
 }
 
@@ -153,8 +158,8 @@ class Heliconia extends TropicalFlower {
 
     public final static String NAME = "Heliconia";
 
-    public Heliconia (double length, BigDecimal price, Date pickedDate) {
-        super(length, price, pickedDate);
+    public Heliconia (double length, BigDecimal price, int pickedDaysBefore) {
+        super(length, price, pickedDaysBefore);
     }
 }
 
@@ -162,27 +167,36 @@ class Ginger extends TropicalFlower {
 
     public final static String NAME = "Ginger";
 
-    public Ginger (double length, BigDecimal price, Date pickedDate) {
-        super(length, price, pickedDate);
+    public Ginger (double length, BigDecimal price, int pickedDaysBefore) {
+        super(length, price, pickedDaysBefore);
     }
 }
 
 class Bucket {
 
     private Collection<Flower> flowers;
+    private double freshness;
 
-    public Bucket() {}
+
+    public Bucket() {
+        this.flowers = new ArrayList<>();
+        this.freshness = 0.0;
+    }
 
     public void addFlower (Flower flower) {
-        this.flowers.add(flower);
+        flowers.add(flower);
+        freshness += flower.getDays() / flowers.size();
     }
 
-    public void addFlowers(Bucket bucket) {
+    /*public void addFlowers(Bucket bucket) {
         this.flowers.addAll(bucket.flowers);
-    }
+    }*/
 
     public boolean removeFlower(Flower flower) {
-        if (!flowers.contains(flower)) {
+        if (flowers.isEmpty()) {
+            System.out.println("The bucket is empty.");
+            return false;
+        } else if (!flowers.contains(flower)) {
             return false;
         } else {
             flowers.remove(flower);
@@ -223,5 +237,11 @@ class Bucket {
         }
         return longestFlower;
     }
-}
 
+    /*public long getDateDiff(Date date1, Date date2) {
+
+        long diffInMillies = date2.getTime() - date1.getTime();
+        return TimeUnit.MILLISECONDS.convert(diffInMillies,TimeUnit.MILLISECONDS);
+
+    }*/
+}
