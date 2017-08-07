@@ -1,6 +1,7 @@
 package com.zelenin.labs.lab_2_OOP;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
@@ -11,7 +12,7 @@ public class Bouquet {
     private static int counter = 0;
     public final int UID = counter++;
 
-    private Collection <Flower> flowers;
+    private Collection <Flower> flowers = new ArrayList<>();
 
     public Bouquet(Flower... flower) {
         for (Flower f : flower) {
@@ -67,8 +68,8 @@ public class Bouquet {
         return ChronoUnit.DAYS.between(start, end);
     }
 
-    public String toSting() {
-        return  new String("Bouquet_" + UID);
+    public String toString() {
+        return new String("Bouquet_" + UID);
     }
 
     class NoBouquetException extends Exception {
