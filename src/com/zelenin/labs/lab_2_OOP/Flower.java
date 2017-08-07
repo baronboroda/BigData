@@ -1,5 +1,7 @@
 package com.zelenin.labs.lab_2_OOP;
 
+import org.jetbrains.annotations.Nullable;
+
 import java.math.BigDecimal;
 import java.time.Month;
 import java.time.LocalDate;
@@ -40,7 +42,7 @@ public abstract class Flower {
         this.pickedOn = pickedOn;
     }
 
-    public LocalDate getPickedOnOn() {
+    public LocalDate getPickedOn() {
         return this.pickedOn;
     }
 
@@ -68,6 +70,8 @@ public abstract class Flower {
         Bouquet b2 = new Bouquet(lav1, lil1, o1);
         Bouquet b3 = new Bouquet(p1, t1, w1);
 
+        Bouquet b4 = new Bouquet();
+
         System.out.println("--------------Result---------------");
         Flower longestFlower;
         System.out.println("Bouquet_1: ");
@@ -85,23 +89,28 @@ public abstract class Flower {
         System.out.println("Longest flower is " + longestFlower+ " with length " +longestFlower.getLength());
         System.out.println("Total price is " + b3.getTotalPrice());
 
-        System.out.println("-------Most freshness bouquet------");
+        System.out.println("-------Most fresh bouquet------");
         Bouquet mostFresh = getMostFresh(b1, b2, b3);
-        System.out.println("Most freshness bouquet is bouquet " + mostFresh + " with average freshness " + mostFresh.getFreshness() + " days.");
+        System.out.println("Most fresh bouquet is " + mostFresh);
 
     }
 
     public static Bouquet getMostFresh(Bouquet... bouquet) {
-        long maxFresh = Long.MAX_VALUE;
-        Bouquet mostFresh = null;
+        try {
+            double maxFresh = Long.MAX_VALUE;
+            Bouquet mostFresh = null;
 
-        for(Bouquet b : bouquet) {
-            if(maxFresh > b.getFreshness()) {
-                maxFresh  = b.getFreshness();
-                mostFresh = b;
+            for (Bouquet b : bouquet) {
+                if (maxFresh > b.getFreshness()) {
+                    maxFresh = b.getFreshness();
+                    mostFresh = b;
+                }
             }
+            return mostFresh;
+        } catch(Bouquet.NoBouquetException e) {
+            e.printStackTrace();
         }
-        return mostFresh;
+        return null;
     }
 
 }
