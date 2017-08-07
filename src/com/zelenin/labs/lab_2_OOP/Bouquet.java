@@ -67,6 +67,10 @@ public class Bouquet {
         return ChronoUnit.DAYS.between(start, end);
     }
 
+    public String toSting() {
+        return  new String("Bouquet_" + UID);
+    }
+
     class NoBouquetException extends Exception {
         public NoBouquetException(String message) {
             super(message);
