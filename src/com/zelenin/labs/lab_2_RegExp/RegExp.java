@@ -29,12 +29,29 @@ public class RegExp {
 
     }
 
+    public static String[] getUniqueWords(String[] arg) {
+
+    }
+
     public static int getFrequency(String[] words, String word) {
-
         int result = 0;
-        for (String s : words)
-            if (s.equals(word)) { result++; }
+        for (String s : words) {
+            if (s.equals(word)) {
+                result++;
+            }
+        }
+        return result;
+    }
 
+    public static boolean findWord(String[] arg, String word) {
+        boolean result = false;
+        for (String s : arg) {
+            if (s.equals(word)) {
+                result = true;
+            } else {
+                result = false;
+            }
+        }
         return result;
     }
 }
