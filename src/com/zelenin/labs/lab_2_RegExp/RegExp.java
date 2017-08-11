@@ -7,15 +7,25 @@ import java.util.regex.Pattern;
 public class RegExp {
     public static void main(String[] args) {
 
-        String input = "Hello, my name is Max I'm 26 years old. name, Hello my.";
+        String input = " ...Hello, my name is Max! I attend \"Big Data\" courses in Epam IT Academy. " +
+                        "This is my text example for the string processing task. Hello (just repeat first word). ";
+       /*
         System.out.println("------------Input text--------------");
         System.out.println(input);
         System.out.println();
+
         System.out.println("Words frequency: ");
         printWordsFrequency(input);
+
         System.out.println();
         printFirstUniqueWord(input);
+*/
+        Pattern pattern = Pattern.compile("[^.:!?\\s][^.!?]*[.!?]?(?=\\s|$)");
+        Matcher matcher = pattern.matcher(input);
 
+        while(matcher.find()) {
+            System.out.println(matcher.group());
+        }
     }
 
     public static void printWordsFrequency(String text) {
@@ -72,5 +82,12 @@ public class RegExp {
         text = text.replaceAll("[,.:!?]", " ");
         String[] words = text.split("\\s+");
         return words;
+    }
+
+    public static Collection<String> splitTextIntoSentences(String text) {
+
+        Collection<String> sentences = null;
+
+        return sentences;
     }
 }
