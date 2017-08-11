@@ -22,29 +22,36 @@ public class Bouquet {
                 this.items.add(bi);
                 bi.setIsFree(false);
             } else {
-                System.out.println("Oops! " + bi + " already exists in the bouquet");
+                System.out.println("Oops! " + bi + " is not free, it already exists in the other bouquet");
             }
         }
     }
 
-    public void getLongestFlower() throws BouquetException {
+    public Flower getLongestFlower() throws BouquetException {
 
-        double maxLength = 0.0d;
-        Flower longestFlower = null;
+        if (this.items.isEmpty() || this.items == null) {
+            throw new BouquetException(this + " is empty or doesn't exists.");
+        } else {
 
-        for (BouquetItem bi : this.items) {
-            if(bi instanceof Flower) {
-                Flower f = (Flower)bi;
-                if (maxLength < f.getStemLength()) {
-                    maxLength = f.getStemLength();
-                    longestFlower = f;
+            double maxLength = 0.0d;
+            Flower longestFlower = null;
+
+            for (BouquetItem bi : this.items) {
+                if (bi instanceof Flower) {
+                    Flower f = (Flower) bi;
+                    if (maxLength < f.getStemLength()) {
+                        maxLength = f.getStemLength();
+                        longestFlower = f;
+                    }
                 }
             }
+
+            if (longestFlower == null) {
+                throw new BouquetException(this + " has no flowers.");
+            } else {
+                return longestFlower;
+            }
         }
-        if(longestFlower == null) {
-            System.out.println(this + " has no flowers.");
-        }
-        System.out.println("The longest flower in " + this + " is " + );
     }
 
     public BigDecimal getTotalPrice() {
@@ -59,21 +66,25 @@ public class Bouquet {
     }
 
     public double getFreshness() throws BouquetException {
+        if (this.items.isEmpty() || this.items == null) {
+            throw new BouquetException(this + " is empty or doesn't exists.");
+        } else {
+            double totalFreshness = 0.0d;
+            int flowersQuantity = 0;
 
-        double totalFreshness = 0.0d;
-        int flowersQuantity = 0;
-
-        for (BouquetItem bi : this.items) {
-            if(bi instanceof Flower) {
-                Flower f = (Flower)bi;
-                totalFreshness += (double) ChronoUnit.DAYS.between(f.getPickedOn(), LocalDate.now());
-                flowersQuantity++;
+            for (BouquetItem bi : this.items) {
+                if (bi instanceof Flower) {
+                    Flower f = (Flower) bi;
+                    totalFreshness += (double) ChronoUnit.DAYS.between(f.getPickedOn(), LocalDate.now());
+                    flowersQuantity++;
+                }
+            }
+            if (flowersQuantity == 0) {
+                throw new BouquetException(this + " has no freshness, because of no flowers.");
+            } else {
+                return totalFreshness / flowersQuantity;
             }
         }
-        if(flowersQuantity == 0) {
-            throw new BouquetException("Bouquet has no flowers.");
-        }
-        return totalFreshness / flowersQuantity;
     }
 
     public void findFlowersByName(String name) {
@@ -100,14 +111,20 @@ public class Bouquet {
         }
     }
 
-    private void checkBouquet() {
+    public void getInfoAboutBouquet() {
+        System.out.println(this + ":");
+        System.out.println("The price of " + this + " is " + this.getTotalPrice());
         try {
-            if (this.items.isEmpty() || this.items == null) {
-                throw new BouquetException("Bouquet is empty or doesn't exists.");
-            }
-        } catch(BouquetException e) {
-            e.printStackTrace();
+            System.out.println("Average freshness of " + this + " is " + this.getFreshness() + " days. ");
+        } catch (BouquetException e) {
+            System.out.println(e.getMessage());
         }
+        try {
+            System.out.println("Longest flower in " + this + " is " + this.getLongestFlower());
+        } catch (BouquetException e) {
+            System.out.println(e.getMessage());
+        }
+        System.out.println("--------------------------------------------");
     }
 
     public String toString() {

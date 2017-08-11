@@ -18,7 +18,7 @@ public class FlowerShop {
         Flower f1 = new Flower("Rose", "pink", 50,
                 LocalDate.of(2017, Month.AUGUST, 10),
                 BigDecimal.valueOf(45.0));
-        Flower f2 = new Flower("Lily", "white", 40,
+        Flower f2 = new Flower("Lily", "white", 30,
                 LocalDate.of(2017, Month.AUGUST, 8),
                 BigDecimal.valueOf(50.0));
         Flower f3 = new Flower("Lavender", "blue", 45,
@@ -38,7 +38,7 @@ public class FlowerShop {
         Bouquet b1 = new Bouquet();
         b1.addItems(f1, f2, f4);
         Bouquet b2 = new Bouquet();
-        b2.addItems(c1);
+        b2.addItems(c1, f1, f2);
         Bouquet b3 = new Bouquet();
         b3.addItems(f3, f5, c2, c3);
 
@@ -47,20 +47,51 @@ public class FlowerShop {
         bouquets.add(b2);
         bouquets.add(b3);
 
-        try {
-
-            /* Let's get info about bouquets */
-            for (Bouquet b : bouquets) {
-                System.out.println("The price of " + b + " is " + b.getTotalPrice());
-                System.out.println("The longest flower in " + b + " is " + b.getLongestFlower());
-            }
-            System.out.println("----------------------------------------");
-
-            /* Let's  */
-
-        } catch (BouquetException e) {
-            e.printStackTrace();
+        /* Get info about each bouquet */
+        System.out.println();
+        for (Bouquet b : bouquets) {
+            b.getInfoAboutBouquet();
         }
+
+        /* Let's cut the f3 flower */
+        System.out.println();
+        f4.cutStem(15);
+        b1.getInfoAboutBouquet();
+
+        /* Let's find some flowers in the bouquets */
+        System.out.println();
+        b1.findFlowersByName("Rose");
+        System.out.println();
+        b2.findFlowersByName("Orchid");
+
+        /* Let's find the most fresh bouquet */
+        System.out.println();
+        System.out.println("The most fresh bouquet is " + getMostFreshBouquet(bouquets));
+    }
+
+   public static Bouquet getMostFreshBouquet(Collection<Bouquet> bouquets) {
+        if (bouquets.isEmpty()) {
+            System.out.println("No bouquets found");
+            return null;
+        }
+
+        Double maxFreshness = Double.MAX_VALUE;
+        Double freshness = 0.0;
+        Bouquet mostFresh = null;
+
+        for(Bouquet b : bouquets) {
+
+            try {
+                freshness =  b.getFreshness();
+            } catch (BouquetException e) {
+                /*NOP*/
+            }
+            if(freshness < maxFreshness) {
+                maxFreshness = freshness;
+                mostFresh = b;
+            }
+        }
+       return mostFresh;
     }
 
 }
