@@ -8,23 +8,28 @@ public class RegExp {
     public static void main(String[] args) {
 
         String input = "Hello, my name is Max I'm 26 years old. name, Hello my.";
+        System.out.println("------------Input text--------------");
+        System.out.println(input);
+        System.out.println();
+        System.out.println("Words frequency: ");
         printWordsFrequency(input);
-
+        System.out.println();
+        printFirstUniqueWord(input);
 
     }
 
     public static void printWordsFrequency(String text) {
 
-        text = text.replaceAll("[!?.:,]", "");
-        String[] words = text.split("\\s+");
-
-        List<String> myList = Arrays.asList(words);
-        Set<String> mySet = new HashSet<String>(myList);
-
-        for(String s : mySet) {
-            System.out.println(s + " --> " + getWordFrequency(words, s));
+        for(String s : getDistinctWords(text)) {
+            System.out.println(s + " --> " + getWordFrequency(splitTextIntoWords(text), s));
         }
     }
+
+    public static void printFirstUniqueWord(String text) {
+        System.out.println("First unique word is: " + getFirstUniqueWord(splitTextIntoWords(text), getDistinctWords(text)));
+    }
+
+
 
     public static int getWordFrequency(String[] words, String word) {
         int result = 0;
@@ -36,4 +41,36 @@ public class RegExp {
         return result;
     }
 
+    public static String getFirstUniqueWord(String[] words, HashSet<String> distinct) {
+        String result = "";
+        for (String d : distinct) {
+            int quantity = 0;
+            for (String w : words) {
+                if (d.equals(w)) {
+                    if ((quantity++) > 2) {
+                        break;
+                    }
+                }
+            }
+            if(quantity == 1) {
+                result = d;
+                break;
+            }
+        }
+        return result;
+    }
+
+    public static LinkedHashSet<String> getDistinctWords(String text) {
+        String[] words = splitTextIntoWords(text);
+        List<String> myList = Arrays.asList(words);
+        LinkedHashSet<String> mySet = new LinkedHashSet<>(myList);
+
+        return mySet;
+    }
+
+    public static String[] splitTextIntoWords(String text) {
+        text = text.replaceAll("[,.:!?]", " ");
+        String[] words = text.split("\\s+");
+        return words;
+    }
 }
