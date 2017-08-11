@@ -6,16 +6,18 @@ import java.util.regex.Pattern;
 public class RegExp {
     public static void main(String[] args) {
 
-    String input = "Are you O.K.? Who, me?! Yes. Mr. & Mrs. Smith and Dr." +
-                    " John Doe. This is how I tried to split a paragraph into a sentence." +
-                    " But, there is a problem. My paragraph includes dates like Jan.13, 2014 ," +
-                    " words like U.S and numbers like 2.2. They all got split by the above code.";
+        String input = "Hello, my name is Max I'm 26 years old. name, Hello.";
 
-    Matcher matcher = Pattern.compile("^.*?[a-z]{2,}[.!?]").matcher(input);
-    while (matcher.find())
-    {
-        System.out.println(matcher.group(1));
-    }
+        /*Matcher matcher = Pattern.compile("(?!^)\\b").matcher(input);
+        while (matcher.find()) {
+            System.out.println(matcher.group());
+        }*/
+
+        input = input.replaceAll("[!?.,]", "");
+        String[] words = input.split("\\s+");
+        for (int i = 0; i < words.length; i++) {
+            System.out.println(words[i]);
+        }
 
     }
 }
