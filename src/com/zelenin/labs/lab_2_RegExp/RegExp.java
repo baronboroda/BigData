@@ -20,18 +20,13 @@ public class RegExp {
 
         input = input.replaceAll("[!?.,]", "");
         String[] words = input.split("\\s+");
-
-
-        Set<String> wordsSet = new HashSet<String>(Arrays.asList(words));
-        for(String s: wordsSet){
-            System.out.println(s + " " ;
-        }
+        
 
     }
 
-    public static String[] getUniqueWords(String[] arg) {
+    /*public static String[] getUniqueWords(String[] arg) {
 
-    }
+    }*/
 
     public static int getFrequency(String[] words, String word) {
         int result = 0;
