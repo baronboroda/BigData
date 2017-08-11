@@ -126,7 +126,7 @@ public class RegExp {
         String result = "";
 
         for(String sentence : splitTextIntoSentences(text)) {
-            result += sentence.replaceAll(findFirstLongestWord(sentence), findFirstShortestWord(sentence));
+            result += sentence.replaceAll("\\b" + findFirstLongestWord(sentence) + "\\b", findFirstShortestWord(sentence));
         }
 
         return result;
