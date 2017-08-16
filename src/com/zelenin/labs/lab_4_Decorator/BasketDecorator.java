@@ -5,7 +5,7 @@ public class BasketDecorator extends ItemDecorator {
     private Item item;
 
     public BasketDecorator(Item item) {
-        super(item);
+        this.item = item;
     }
 
     public double price() {

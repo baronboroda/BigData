@@ -12,7 +12,7 @@ public class FlowerShop {
         fb1.addFlowers(f1, f2, f3);
 
         FlowerBucket fb2 = new FlowerBucket();
-        fb2.addFlowers(f3, f4);
+        fb2.addFlowers(f4, f5);
 
         ItemDecorator pd = new PaperDecorator(fb1);
         ItemDecorator rd = new RibbonDecorator(fb2);

@@ -5,7 +5,7 @@ public class RibbonDecorator extends ItemDecorator {
     private Item item;
 
     public RibbonDecorator(Item item) {
-        super(item);
+        this.item = item;
     }
 
     public double price() {

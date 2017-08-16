@@ -1,11 +1,11 @@
 package com.zelenin.labs.lab_4_Decorator;
 
-public class PaperDecorator extends ItemDecorator{
+public class PaperDecorator extends ItemDecorator {
 
-    private Item item;
+    Item item;
 
     public PaperDecorator(Item item) {
-        super(item);
+        this.item = item;
     }
 
     public double price() {
