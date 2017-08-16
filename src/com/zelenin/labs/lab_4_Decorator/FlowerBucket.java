@@ -25,4 +25,10 @@ public class FlowerBucket extends Item {
 
         return result;
     }
+
+    public void addFlowers(Flower... flower) {
+        for(Flower f : flower) {
+            bucket.add(f);
+        }
+    }
 }

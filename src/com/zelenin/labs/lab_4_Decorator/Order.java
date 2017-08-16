@@ -8,6 +8,10 @@ public class Order {
     private IPayment payment;
     private IDelivery delivery;
 
+    public Order() {
+        this.items = new LinkedList<>();
+    }
+
     public void setPaymentStrategy(IPayment payment) {
         this. payment = payment;
     }
