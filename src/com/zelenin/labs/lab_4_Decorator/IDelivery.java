@@ -4,5 +4,5 @@ import java.util.LinkedList;
 
 public interface IDelivery {
 
-    public void deliver(LinkedList items);
+    public void deliver(LinkedList<Item> items);
 }

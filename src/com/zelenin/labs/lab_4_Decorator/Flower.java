@@ -20,6 +20,16 @@ public class Flower {
         return fresh;
     }
 
+    public boolean equals(Flower flower) {
+        if(this.fresh == flower.isFresh() &&
+           this.price == flower.getPrice() &&
+           this.spec.matches(flower.getSpec())) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public String toString() {
         return "Type: " + spec.getType() + " price is " + String.valueOf(getPrice()) + " its color is " + spec.getColor() + " fresh leve is " + String.valueOf(isFresh()) + " its height " + String.valueOf(spec.getLength());
     }

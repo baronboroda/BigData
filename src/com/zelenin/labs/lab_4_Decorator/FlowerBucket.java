@@ -31,4 +31,17 @@ public class FlowerBucket extends Item {
             bucket.add(f);
         }
     }
+
+    public boolean searchFlower(Flower flower) {
+
+        boolean result = false;
+        for(Flower f : bucket) {
+            result = f.equals(flower);
+            if (result) {
+                break;
+            }
+        }
+        return result;
+    }
+
 }

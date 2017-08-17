@@ -7,6 +7,7 @@ public class FlowerShop {
         Flower f3 = new Flower(true, 40, new FlowerSpec(FlowerColor.GREEN, 35, FlowerType.ROZA));
         Flower f4 = new Flower(true, 35, new FlowerSpec(FlowerColor.BLUE, 55, FlowerType.TULPAN));
         Flower f5 = new Flower(true, 25, new FlowerSpec(FlowerColor.RED, 45, FlowerType.ROMASHKA));
+        Flower f6 = new Flower(true, 10, new FlowerSpec(FlowerColor.RED, 50, FlowerType.MAK));
 
         FlowerBucket fb1 = new FlowerBucket();
         fb1.addFlowers(f1, f2, f3);
@@ -16,6 +17,8 @@ public class FlowerShop {
 
         ItemDecorator pd = new PaperDecorator(fb1);
         ItemDecorator rd = new RibbonDecorator(fb2);
+
+        System.out.println(fb1.searchFlower(f6));
 
         Order o1 = new Order();
         o1.addItem(pd);
