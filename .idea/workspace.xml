@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="369ec42a-aa1c-4fa5-bb5a-8e919017a191" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/zelenin/labs/lab_7_BankCredit/BankApp.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/zelenin/labs/lab_7_BankCredit/Credit.java" afterPath="$PROJECT_DIR$/src/com/zelenin/labs/lab_7_BankCredit/Credit.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/zelenin/labs/lab_7_BankCredit/CreditType.java" afterPath="$PROJECT_DIR$/src/com/zelenin/labs/lab_7_BankCredit/CreditType.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,11 +33,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Credit.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BankApp.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/zelenin/labs/lab_7_BankCredit/BankApp.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="23" column="8" lean-forward="false" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Credit.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/zelenin/labs/lab_7_BankCredit/Credit.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="35" column="16" lean-forward="true" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
+            <state relative-caret-position="572">
+              <caret line="35" column="61" lean-forward="false" selection-start-line="35" selection-start-column="61" selection-end-line="35" selection-end-column="61" />
               <folding />
             </state>
           </provider>
@@ -44,8 +56,8 @@
       <file leaf-file-name="CreditType.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/zelenin/labs/lab_7_BankCredit/CreditType.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="34" lean-forward="true" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+            <state relative-caret-position="340">
+              <caret line="22" column="5" lean-forward="false" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -122,11 +134,12 @@
         <option value="$PROJECT_DIR$/src/com/zelenin/labs/lab_7_BankCredit/Item.java" />
         <option value="$PROJECT_DIR$/src/com/zelenin/labs/lab_7_BankCredit/InterestCredit.java" />
         <option value="$PROJECT_DIR$/src/com/zelenin/labs/lab_7_BankCredit/CreditFeatures.java" />
-        <option value="$PROJECT_DIR$/src/com/zelenin/labs/lab_7_BankCredit/CreditType.java" />
         <option value="$PROJECT_DIR$/src/com/zelenin/labs/lab_7_BankCredit/RedemptionStrategy.java" />
         <option value="$PROJECT_DIR$/src/com/zelenin/labs/lab_7_BankCredit/RedemptionPerMonth.java" />
         <option value="$PROJECT_DIR$/src/com/zelenin/labs/lab_7_BankCredit/Bank.java" />
         <option value="$PROJECT_DIR$/src/com/zelenin/labs/lab_7_BankCredit/Credit.java" />
+        <option value="$PROJECT_DIR$/src/com/zelenin/labs/lab_7_BankCredit/CreditType.java" />
+        <option value="$PROJECT_DIR$/src/com/zelenin/labs/lab_7_BankCredit/BankApp.java" />
       </list>
     </option>
   </component>
@@ -434,7 +447,14 @@
       <option name="project" value="LOCAL" />
       <updated>1504270515201</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="BankCredit commit 3">
+      <created>1504270675638</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1504270675638</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -489,13 +509,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/zelenin/labs/lab_2_RegExp/RegExp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/zelenin/labs/lab_2_RegExp/RegExp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -830,20 +843,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/zelenin/labs/lab_7_BankCredit/Bank.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#434#435#0" expanded="true" />
-            <element signature="e#465#466#0" expanded="true" />
-            <element signature="e#512#513#0" expanded="true" />
-            <element signature="e#546#547#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/zelenin/labs/lab_7_BankCredit/CreditTarget.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -860,18 +859,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/zelenin/labs/lab_7_BankCredit/CreditType.java">
+    <entry file="file://$PROJECT_DIR$/src/com/zelenin/labs/lab_7_BankCredit/Credit.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="34" lean-forward="true" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+        <state relative-caret-position="572">
+          <caret line="35" column="61" lean-forward="false" selection-start-line="35" selection-start-column="61" selection-end-line="35" selection-end-column="61" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/zelenin/labs/lab_7_BankCredit/Credit.java">
+    <entry file="file://$PROJECT_DIR$/src/com/zelenin/labs/lab_7_BankCredit/CreditType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="22" column="5" lean-forward="false" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/zelenin/labs/lab_7_BankCredit/Bank.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="595">
-          <caret line="35" column="16" lean-forward="true" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
+          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#434#435#0" expanded="true" />
+            <element signature="e#465#466#0" expanded="true" />
+            <element signature="e#512#513#0" expanded="true" />
+            <element signature="e#546#547#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/zelenin/labs/lab_7_BankCredit/BankApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="8" lean-forward="false" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
           <folding />
         </state>
       </provider>

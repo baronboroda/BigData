@@ -23,6 +23,7 @@ public class Credit {
         BigDecimal line = amount.add(additionAmount);
 
         if(type.getMoneyLimit().compareTo(line) == -1) {
+            System.out.println("Amount can not be bigger than limit");
             return;
         }
         amount = amount.add(additionAmount);
@@ -31,6 +32,7 @@ public class Credit {
     public void makeRedemption(BigDecimal payment){
 
         BigDecimal subtraction = amount.subtract(payed);
+
         if(type.getEarlyRepayment() && payment == subtraction) {
             close(payment);
         } else {

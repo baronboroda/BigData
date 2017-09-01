@@ -4,23 +4,22 @@ import java.math.BigDecimal;
 
 public class CreditType {
 
-    private String name;
     private CreditTarget target;
     private BigDecimal moneyLimit;
     private int monthLimit;
     private boolean isEarlyRepayment;
     private float interestRate;
 
+    public CreditType(CreditTarget target, BigDecimal moneyLimit, int monthLimit, boolean isEarlyRepayment, float interestRate) {
+        this.target = target;
+        this.moneyLimit = moneyLimit;
+        this.monthLimit = monthLimit;
+        this.isEarlyRepayment = isEarlyRepayment;
+        this.interestRate = interestRate;
+    }
+
     public CreditTarget getTarget() {
         return target;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
     }
 
     public void setMoneyLimit(BigDecimal moneyLimit) {
