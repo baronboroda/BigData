@@ -19,11 +19,15 @@ public class Credit {
     }
 
     public void increaseCreditLine(BigDecimal additionAmount) {
+
+        if()
         amount = amount.add(additionAmount);
     }
 
     public void makeRedemption(BigDecimal payment){
-        if(type.getEarlyRepayment() && payment == amount.subtract(payed)) {
+
+        BigDecimal subtraction = amount.subtract(payed);
+        if(type.getEarlyRepayment() && payment == subtraction) {
             close(payment);
         } else {
             payed = payed.add(payment);

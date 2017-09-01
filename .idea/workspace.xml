@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="369ec42a-aa1c-4fa5-bb5a-8e919017a191" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/zelenin/labs/lab_7_BankCredit/Bank.java" afterPath="$PROJECT_DIR$/src/com/zelenin/labs/lab_7_BankCredit/Bank.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/zelenin/labs/lab_7_BankCredit/Credit.java" afterPath="$PROJECT_DIR$/src/com/zelenin/labs/lab_7_BankCredit/Credit.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -35,12 +34,9 @@
       <file leaf-file-name="Credit.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/zelenin/labs/lab_7_BankCredit/Credit.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="31" column="13" lean-forward="true" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
-              <folding>
-                <element signature="e#528#529#0" expanded="true" />
-                <element signature="e#579#580#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="612">
+              <caret line="36" column="9" lean-forward="true" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -417,7 +413,14 @@
       <option name="project" value="LOCAL" />
       <updated>1504269947682</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Decorator commit 3">
+      <created>1504270406334</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1504270406334</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -852,12 +855,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/zelenin/labs/lab_7_BankCredit/Credit.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="13" lean-forward="true" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
-          <folding>
-            <element signature="e#528#529#0" expanded="true" />
-            <element signature="e#579#580#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="612">
+          <caret line="36" column="9" lean-forward="true" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
