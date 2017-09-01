@@ -16,6 +16,12 @@ public class Bank {
         this.types = new HashSet<>();
     }
 
+    public HashSet<CreditType> getTypes() {
+        HashSet<CreditType> result = new HashSet<>();
+        result.addAll(types);
+        return result;
+    }
+
     public void addType(CreditType type) {
         types.add(type);
     }
@@ -33,5 +39,8 @@ public class Bank {
         } else  { Credit c = new Credit(this, type, amount); }
     }
 
+    public String toString() {
+        return name;
+    }
 
 }

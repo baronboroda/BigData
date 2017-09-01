@@ -47,4 +47,8 @@ public class Credit {
         payed = payed.add(payment);
         isClosed = true;
     }
+
+    public String toString() {
+        return "Bank: " + bank + "\n Type: " + type;
+    }
 }

@@ -53,4 +53,11 @@ public class CreditType {
     public float getInterestRate() {
         return interestRate;
     }
+
+    @Override
+    public String toString() {
+        return "Target: " + target + "; money limit = " + moneyLimit +
+                "; month limit = " + monthLimit + "; is early repayment: " + isEarlyRepayment +
+                ";interest rate = " + interestRate;
+    }
 }
