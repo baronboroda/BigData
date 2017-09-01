@@ -3,12 +3,25 @@ package com.zelenin.labs.lab_7_BankCredit;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Scanner;
+
+/*Demo class*/
 
 public class BankApp {
 
     public static Collection<Bank> banks = new ArrayList<>();
 
     public static void main(String[] args) {
+
+        /* Let's create some data for test */
+        dataPrepare();
+
+        /* Let's find credit offers by target from different banks */
+        findCreditOffers();
+
+    }
+
+    public static void dataPrepare() {
         Bank b1 = new Bank("PrivatBank", "some address");
         Bank b2 = new Bank("AlphaBank", "some address");
         Bank b3 = new Bank("CreditAgricoleBank", "some address");
@@ -28,9 +41,34 @@ public class BankApp {
         b3.addType(new CreditType(CreditTarget.CASH, BigDecimal.valueOf(90000), 15, true, 1));
         b3.addType(new CreditType(CreditTarget.CAR, BigDecimal.valueOf(2000000), 40, true, 5));
         b3.addType(new CreditType(CreditTarget.TRAVEL, BigDecimal.valueOf(150000), 12, true, 0));
+    }
 
-        findCreditByTarget(CreditTarget.CASH);
+    public static void findCreditOffers() {
+        Integer iChoice;
+        System.out.println("Enter credit target: ");
+        System.out.println("1 - Cash\n" +
+                "2 - Realty\n" +
+                "3 - Education\n" +
+                "4 - Travel\n" +
+                "5 - Car");
+        Scanner scanner = new Scanner(System.in);
 
+        iChoice = scanner.nextInt();
+
+        switch (iChoice) {
+            case 1:
+                findCreditByTarget(CreditTarget.CASH); break;
+            case 2:
+                findCreditByTarget(CreditTarget.REALTY); break;
+            case 3:
+                findCreditByTarget(CreditTarget.EDUCATION); break;
+            case 4:
+                findCreditByTarget(CreditTarget.TRAVEL); break;
+            case 5:
+                findCreditByTarget(CreditTarget.CAR); break;
+            default:
+                System.out.println("Wrong choice"); break;
+        }
     }
 
     public static void findCreditByTarget(CreditTarget target) {
