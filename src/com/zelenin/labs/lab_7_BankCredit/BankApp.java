@@ -17,7 +17,7 @@ public class BankApp {
         dataPrepare();
 
         /* Let's find credit offers by target from different banks */
-        findCreditOffers();
+        findCreditOffersByTarget();
 
     }
 
@@ -43,7 +43,7 @@ public class BankApp {
         b3.addType(new CreditType(CreditTarget.TRAVEL, BigDecimal.valueOf(150000), 12, true, 0));
     }
 
-    public static void findCreditOffers() {
+    public static void findCreditOffersByTarget() {
         Integer iChoice;
         System.out.println("Enter credit target: ");
         System.out.println("1 - Cash\n" +
@@ -73,6 +73,7 @@ public class BankApp {
 
     public static void findCreditByTarget(CreditTarget target) {
 
+
         System.out.println("Search result by target: " + target);
         for(Bank b : banks) {
             for(CreditType c : b.getTypes()) {
@@ -81,5 +82,7 @@ public class BankApp {
                 }
             }
         }
+
     }
+
 }
