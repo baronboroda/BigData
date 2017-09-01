@@ -14,14 +14,6 @@ public class BankApp {
     public static void main(String[] args) {
 
         /* Let's create some data for test */
-        dataPrepare();
-
-        /* Let's find credit offers by target from different banks */
-        findCreditOffersByTarget();
-
-    }
-
-    public static void dataPrepare() {
         Bank b1 = new Bank("PrivatBank", "some address");
         Bank b2 = new Bank("AlphaBank", "some address");
         Bank b3 = new Bank("CreditAgricoleBank", "some address");
@@ -41,7 +33,12 @@ public class BankApp {
         b3.addType(new CreditType(CreditTarget.CASH, BigDecimal.valueOf(90000), 15, true, 1));
         b3.addType(new CreditType(CreditTarget.CAR, BigDecimal.valueOf(2000000), 40, true, 5));
         b3.addType(new CreditType(CreditTarget.TRAVEL, BigDecimal.valueOf(150000), 12, true, 0));
+
+        /* Let's find credit offers by target from different banks */
+        findCreditOffersByTarget();
+
     }
+
 
     public static void findCreditOffersByTarget() {
         Integer iChoice;
