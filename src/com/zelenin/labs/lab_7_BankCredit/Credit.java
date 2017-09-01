@@ -29,17 +29,21 @@ public class Credit {
         amount = amount.add(additionAmount);
     }
 
+    /* Remark InterestRate is not considered*/
     public void makeRedemption(BigDecimal payment){
 
         BigDecimal subtraction = amount.subtract(payed);
+        BigDecimal paymentPerMonth = amount.divide(BigDecimal.valueOf(type.getMonthLimit()));
 
         if(type.getEarlyRepayment() && payment == subtraction) {
             close(payment);
-        } else {
+        } else if (!type.getEarlyRepayment() && payment == paymentPerMonth) {
             payed = payed.add(payment);
             if (payed == amount) {
                 isClosed = true;
             }
+        } else {
+            System.out.println("Redemption error! Wrong payment argument");
         }
     }
 

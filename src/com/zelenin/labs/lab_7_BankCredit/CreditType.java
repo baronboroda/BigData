@@ -8,7 +8,7 @@ public class CreditType {
     private BigDecimal moneyLimit;
     private int monthLimit;
     private boolean isEarlyRepayment;
-    private float interestRate;
+    private float interestRate; // is not considered in the redemption methods
 
     public CreditType(CreditTarget target, BigDecimal moneyLimit, int monthLimit, boolean isEarlyRepayment, float interestRate) {
         this.target = target;
