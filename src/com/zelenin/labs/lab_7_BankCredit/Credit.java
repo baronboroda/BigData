@@ -20,7 +20,11 @@ public class Credit {
 
     public void increaseCreditLine(BigDecimal additionAmount) {
 
-        if()
+        BigDecimal line = amount.add(additionAmount);
+
+        if(type.getMoneyLimit().compareTo(line) == -1) {
+            return;
+        }
         amount = amount.add(additionAmount);
     }
 
