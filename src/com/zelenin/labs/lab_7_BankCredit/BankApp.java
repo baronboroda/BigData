@@ -18,11 +18,15 @@ public class BankApp {
         Bank b2 = new Bank("AlphaBank", "some address");
         Bank b3 = new Bank("CreditAgricoleBank", "some address");
 
+        /* Some custom types */
+        CreditType t1 = new CreditType(CreditTarget.CASH, BigDecimal.valueOf(100000), 36, true, 5);
+        CreditType t2 = new CreditType(CreditTarget.CAR, BigDecimal.valueOf(100000), 36, true, 5);
+
         banks.add(b1);
         banks.add(b2);
         banks.add(b3);
 
-        b1.addType(new CreditType(CreditTarget.CASH, BigDecimal.valueOf(100000), 36, true, 5));
+        b1.addType(t1);
         b1.addType(new CreditType(CreditTarget.CAR, BigDecimal.valueOf(200000), 24, true, 10));
         b1.addType(new CreditType(CreditTarget.TRAVEL, BigDecimal.valueOf(10000), 12, true, 3));
 
@@ -37,6 +41,23 @@ public class BankApp {
         /* Let's find credit offers by target from different banks */
         findCreditOffersByTarget();
 
+        //errors
+        //b1.openCredit(t1, BigDecimal.valueOf(10000000));
+        //b1.openCredit(t2, BigDecimal.valueOf(10000000));
+
+        //succsessfully opened
+        b1.openCredit(t1, BigDecimal.valueOf(50000));
+
+        Credit c1 = b1.openCredit(t1, BigDecimal.valueOf(50000));
+
+        System.out.println("Credit amount = " + c1.getAmount());
+        //error
+        //c1.increaseCreditLine(BigDecimal.valueOf(500000));
+
+        c1.increaseCreditLine(BigDecimal.valueOf(50000));
+        System.out.println("Credit amount = " + c1.getAmount());
+
+        
     }
 
 
@@ -70,7 +91,6 @@ public class BankApp {
 
     public static void findCreditByTarget(CreditTarget target) {
 
-
         System.out.println("Search result by target: " + target);
         for(Bank b : banks) {
             for(CreditType c : b.getTypes()) {
@@ -79,7 +99,6 @@ public class BankApp {
                 }
             }
         }
-
     }
 
 }

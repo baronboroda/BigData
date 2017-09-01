@@ -30,13 +30,17 @@ public class Bank {
         types.remove(type);
     }
 
-    public void openCredit(CreditType type, BigDecimal amount) {
+    public Credit openCredit(CreditType type, BigDecimal amount) {
 
         if(!types.contains(type)) {
-            return;
+            System.out.println("Error! Can not open credit. No such type detected");
+            return null;
         } else if(amount.compareTo(type.getMoneyLimit()) == 1) {
-            return;
-        } else  { Credit c = new Credit(this, type, amount); }
+            System.out.println("Error! Can not open credit. Wrong amount");
+            return null;
+        } else  {
+            return new Credit(this, type, amount);
+        }
     }
 
     public String toString() {

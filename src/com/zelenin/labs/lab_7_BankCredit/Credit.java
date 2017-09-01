@@ -18,6 +18,14 @@ public class Credit {
         this.isClosed = false;
     }
 
+    public CreditType  getType() {
+        return type;
+    }
+
+    public BigDecimal getAmount() {
+        return amount;
+    }
+
     public void increaseCreditLine(BigDecimal additionAmount) {
 
         BigDecimal line = amount.add(additionAmount);
