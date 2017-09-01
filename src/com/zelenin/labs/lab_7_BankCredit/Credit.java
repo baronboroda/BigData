@@ -18,13 +18,13 @@ public class Credit {
         this.isClosed = false;
     }
 
-    public void increaseCreditLine(int additionQuantity) {
-
+    public void increaseCreditLine(BigDecimal additionAmount) {
+        amount = amount.add(additionAmount);
     }
 
-    public void redemption(BigDecimal payment){
+    public void makeRedemption(BigDecimal payment){
         if(type.getEarlyRepayment() && payment == amount.subtract(payed)) {
-            closeCredit(payment);
+            close(payment);
         } else {
             payed = payed.add(payment);
             if (payed == amount) {
@@ -33,7 +33,7 @@ public class Credit {
         }
     }
 
-    public void closeCredit(BigDecimal payment) {
+    public void close(BigDecimal payment) {
         payed = payed.add(payment);
         isClosed = true;
     }

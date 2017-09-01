@@ -24,7 +24,7 @@ public class Bank {
         types.remove(type);
     }
 
-    public void openCredit(Bank bank, CreditType type, BigDecimal amount) {
+    public void openCredit(CreditType type, BigDecimal amount) {
 
         if(!types.contains(type)) {
             return;
@@ -33,11 +33,5 @@ public class Bank {
         } else  { Credit c = new Credit(this, type, amount); }
     }
 
-    public void makeRedemption(BigDecimal payment) {
 
-    }
-
-    public void closeCredit(BigDecimal payment) {
-
-    }
 }
